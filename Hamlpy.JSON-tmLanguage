@@ -121,6 +121,11 @@
             }
         }
         ]
+    },
+    {
+        "name": "comment.line.hamlpy",
+        "comment": "comments",
+        "match": "(-#(.*)$)|^\\s*/(.*)$"
     }
    ],
   "uuid": "963ae34b-a343-4921-81b6-4ad905ad7ae1"

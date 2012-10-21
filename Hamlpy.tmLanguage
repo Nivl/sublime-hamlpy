@@ -250,6 +250,14 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>comment</key>
+			<string>comments</string>
+			<key>match</key>
+			<string>(-#(.*)$)|^\s*/(.*)$</string>
+			<key>name</key>
+			<string>comment.line.hamlpy</string>
+		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>text.hamlpy</string>
