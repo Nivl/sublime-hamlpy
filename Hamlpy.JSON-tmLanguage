@@ -4,13 +4,14 @@
     "fileTypes": ["haml"],
     "patterns": [
     {
+        "comment": "- tag",
         "begin": "\\s*- ",
         "end": "$",
         "patterns": [
         {
             "match": "and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with",
             "captures": {
-                "0": { "name": "keyword.control.hamlpy" }
+                "0": { "name": "variable.parameter" }
             }
         },
         {
@@ -26,29 +27,32 @@
         ]
     },
     {
+        "comment": " 'key' : None",
         "match": ":\\s*(None)",
         "captures": {
-            "1": { "name": "keyword.control.hamlpy" }
+            "1": { "name": "variable.parameter" }
         }
     },
     {
-        "name": "string.quoted.single",
-        "begin": "'",
-        "end": "'"
+        "comment": "{{ var }}, ={ var }",
+        "begin": "(=|{){",
+        "beginCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        },
+        "end": "}}?",
+        "endCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        }
     },
     {
-        "name": "string.quoted.double",
-        "begin": "\"",
-        "end": "\""
-    },
-    {
+        "comment": "%tag#id.class",
         "begin": "^\\s*(((%)([a-z]+))|((#)([a-zA-Z0-9_-]+))|((\\.)([a-zA-Z0-9_-]+)))",
         "beginCaptures": {
             "3": { "name": "keyword.control.hamlpy" },
             "6": { "name": "keyword.control.hamlpy" },
             "9": { "name": "keyword.control.hamlpy" },
             "4": { "name": "support.function.hamlpy" },
-            "7": { "name": "constant.character.hamlpy" },
+            "7": { "name": "constant.language.hamlpy" },
             "10": { "name": "entity.name.function.hamlpy" }
         },
         "end": "$",
@@ -64,7 +68,7 @@
             "match": "(#)([a-zA-Z0-9_]+)",
             "captures": {
                 "1": { "name": "keyword.control.hamlpy" },
-                "2": { "name": "constant.character.hamlpy" }
+                "2": { "name": "constant.language.hamlpy" }
             }
         },
         {
@@ -75,7 +79,49 @@
             }
         }
         ]
+    },
+    {
+        "begin": "'",
+        "end": "'",
+        "name": "string.quoted.double.hamlpy"
+    },
+    {
+        "begin": "\"",
+        "end": "\"",
+        "name": "string.quoted.double.hamlpy"
+    },
+    {
+        "comment": "{% tags %}",
+        "begin": "{%",
+        "beginCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        },
+        "end": "%}",
+        "endCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        },
+        "patterns": [
+        {
+            "include": "$self"
+        },
+        {
+            "name": "string.quoted.single",
+            "begin": "'",
+            "end": "'"
+        },
+        {
+            "name": "string.quoted.double",
+            "begin": "\"",
+            "end": "\""
+        },
+        {
+            "match": "and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with",
+            "captures": {
+                "0": { "name": "variable.parameter" }
+            }
+        }
+        ]
     }
-    ],
+   ],
   "uuid": "963ae34b-a343-4921-81b6-4ad905ad7ae1"
 }

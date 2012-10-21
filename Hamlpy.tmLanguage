@@ -13,6 +13,8 @@
 		<dict>
 			<key>begin</key>
 			<string>\s*- </string>
+			<key>comment</key>
+			<string>- tag</string>
 			<key>end</key>
 			<string>$</string>
 			<key>patterns</key>
@@ -23,7 +25,7 @@
 						<key>0</key>
 						<dict>
 							<key>name</key>
-							<string>keyword.control.hamlpy</string>
+							<string>variable.parameter</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -53,27 +55,37 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>keyword.control.hamlpy</string>
+					<string>variable.parameter</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string> 'key' : None</string>
 			<key>match</key>
 			<string>:\s*(None)</string>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>'</string>
+			<string>(=|{){</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.hamlpy</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>{{ var }}, ={ var }</string>
 			<key>end</key>
-			<string>'</string>
-			<key>name</key>
-			<string>string.quoted.single</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>end</key>
-			<string>"</string>
-			<key>name</key>
-			<string>string.quoted.double</string>
+			<string>}}?</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.hamlpy</string>
+				</dict>
+			</dict>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -103,7 +115,7 @@
 				<key>7</key>
 				<dict>
 					<key>name</key>
-					<string>constant.character.hamlpy</string>
+					<string>constant.language.hamlpy</string>
 				</dict>
 				<key>9</key>
 				<dict>
@@ -111,6 +123,8 @@
 					<string>keyword.control.hamlpy</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>%tag#id.class</string>
 			<key>end</key>
 			<string>$</string>
 			<key>patterns</key>
@@ -136,7 +150,7 @@
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>constant.character.hamlpy</string>
+							<string>constant.language.hamlpy</string>
 						</dict>
 					</dict>
 					<key>match</key>
@@ -158,6 +172,81 @@
 					</dict>
 					<key>match</key>
 					<string>(\.)([a-zA-Z0-9_]+)</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>end</key>
+			<string>'</string>
+			<key>name</key>
+			<string>string.quoted.double.hamlpy</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>end</key>
+			<string>"</string>
+			<key>name</key>
+			<string>string.quoted.double.hamlpy</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>{%</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.hamlpy</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>{% tags %}</string>
+			<key>end</key>
+			<string>%}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.hamlpy</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>end</key>
+					<string>'</string>
+					<key>name</key>
+					<string>string.quoted.single</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>end</key>
+					<string>"</string>
+					<key>name</key>
+					<string>string.quoted.double</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with</string>
 				</dict>
 			</array>
 		</dict>
