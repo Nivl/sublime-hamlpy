@@ -34,17 +34,6 @@
         }
     },
     {
-        "comment": "{{ var }}, ={ var }",
-        "begin": "(?<!\\\\)(=|#|{){",
-        "beginCaptures": {
-            "0": { "name": "keyword.control.hamlpy" }
-        },
-        "end": "}}?",
-        "endCaptures": {
-            "0": { "name": "keyword.control.hamlpy" }
-        }
-    },
-    {
         "comment": "hamlpy filter",
         "match": "^\\s*:(plain|javascript|cdata|css|markdown|highlight|python)?$",
         "name": "entity.name.function.hamlpy"
@@ -53,6 +42,32 @@
         "comment": "doctypes",
         "match": "^\\s*!!! (\\s*(Frameset|Strict|5|1\\.1|XML))?$",
         "name": "constant.numeric.hamlpy"
+    },
+    {
+        "comment": "{{ var|filter:'value' }}",
+        "begin": "(?<!\\\\)(=|#|{){",
+        "beginCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        },
+        "end": "}}?",
+        "endCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        },
+        "patterns": [
+        {
+            "include": "$self"
+        },
+        {
+            "name": "keyword.control.hamlpy",
+            "match": "[|:]"
+        },
+        {
+            "match": "(add|addslashs|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|safeseq|slice|slugify|stringformat|striptags|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno|)",
+            "captures": {
+                "0": { "name": "variable.parameter" }
+            }
+        }
+        ]
     },
     {
         "comment": "%tag#id.class",
