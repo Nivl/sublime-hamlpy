@@ -9,10 +9,8 @@
         "end": "$",
         "patterns": [
         {
-            "match": "and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with",
-            "captures": {
-                "0": { "name": "variable.parameter" }
-            }
+            "name": "variable.parameter",
+            "match": "and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with"
         },
         {
             "name": "string.quoted.single",
@@ -62,10 +60,8 @@
             "match": "[|:]"
         },
         {
-            "match": "(add|addslashs|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|safeseq|slice|slugify|stringformat|striptags|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno|)",
-            "captures": {
-                "0": { "name": "variable.parameter" }
-            }
+            "name": "variable.parameter",
+            "match": "(add|addslashs|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|safeseq|slice|slugify|stringformat|striptags|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno|)"
         }
         ]
     },
@@ -141,9 +137,7 @@
         },
         {
             "match": "and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with",
-            "captures": {
-                "0": { "name": "variable.parameter" }
-            }
+            "name": "variable.parameter"
         }
         ]
     },
