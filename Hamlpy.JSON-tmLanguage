@@ -45,6 +45,11 @@
         }
     },
     {
+        "comment": "hamlpy filter",
+        "match": "^\\s*:(plain|javascript|cdata|css|markdown|highlight|python)?$",
+        "name": "entity.name.function.hamlpy"
+    },
+    {
         "comment": "doctypes",
         "match": "^\\s*!!! (\\s*(Frameset|Strict|5|1\\.1|XML))?$",
         "name": "constant.numeric.hamlpy"

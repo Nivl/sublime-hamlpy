@@ -89,6 +89,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>hamlpy filter</string>
+			<key>match</key>
+			<string>^\s*:(plain|javascript|cdata|css|markdown|highlight|python)?$</string>
+			<key>name</key>
+			<string>entity.name.function.hamlpy</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>doctypes</string>
 			<key>match</key>
 			<string>^\s*!!! (\s*(Frameset|Strict|5|1\.1|XML))?$</string>
