@@ -35,7 +35,7 @@
     },
     {
         "comment": "{{ var }}, ={ var }",
-        "begin": "(=|{){",
+        "begin": "(?<!\\\\)(=|#|{){",
         "beginCaptures": {
             "0": { "name": "keyword.control.hamlpy" }
         },
