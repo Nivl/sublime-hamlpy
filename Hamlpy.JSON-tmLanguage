@@ -45,6 +45,11 @@
         }
     },
     {
+        "comment": "doctypes",
+        "match": "^\\s*!!! (\\s*(Frameset|Strict|5|1\\.1|XML))?$",
+        "name": "constant.numeric.hamlpy"
+    },
+    {
         "comment": "%tag#id.class",
         "begin": "^\\s*(((%)([a-z]+))|((#)([a-zA-Z0-9_-]+))|((\\.)([a-zA-Z0-9_-]+)))",
         "beginCaptures": {

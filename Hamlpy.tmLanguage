@@ -88,6 +88,14 @@
 			</dict>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>doctypes</string>
+			<key>match</key>
+			<string>^\s*!!! (\s*(Frameset|Strict|5|1\.1|XML))?$</string>
+			<key>name</key>
+			<string>constant.numeric.hamlpy</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>^\s*(((%)([a-z]+))|((#)([a-zA-Z0-9_-]+))|((\.)([a-zA-Z0-9_-]+)))</string>
 			<key>beginCaptures</key>
