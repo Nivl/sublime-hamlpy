@@ -5,12 +5,19 @@
     "patterns": [
     {
         "comment": "- tag",
-        "begin": "\\s*- ",
+        "begin": "\\s*-",
         "end": "$",
         "patterns": [
         {
             "name": "variable.parameter",
-            "match": "and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with"
+            "match": "\\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|or|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with)\\s+"
+        },
+        {
+            "name": "variable.parameter",
+            "match": "(\\|)(add|addslashs|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|safeseq|slice|slugify|stringformat|striptags|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno)(?![a-zA-Z_-])",
+            "captures": {
+                "1": { "name": "keyword.control.hamlpy" }
+            }
         },
         {
             "name": "string.quoted.single",
@@ -61,7 +68,7 @@
         },
         {
             "name": "variable.parameter",
-            "match": "(add|addslashs|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|safeseq|slice|slugify|stringformat|striptags|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno|)"
+            "match": "(add|addslashs|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|safeseq|slice|slugify|stringformat|striptags|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno)(?![a-zA-Z_-])"
         }
         ]
     },
@@ -136,8 +143,15 @@
             "end": "\""
         },
         {
-            "match": "and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with",
+            "match": "\\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|if|in|not|ifchanged|ifequal|ifnotequal|include|load|now|or|regroup|spaceless|ssi|trans|url|verbatim|widthradio|with)\\s+",
             "name": "variable.parameter"
+        },
+        {
+            "name": "variable.parameter",
+            "match": "(\\|)(add|addslashs|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|lower|make_list|phone2numeric|pluralize|pprint|random|removetags|rjust|safe|safeseq|slice|slugify|stringformat|striptags|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|upper|urlencode|urlize|urlizetrunc|wordcount|wordwrap|yesno)(?![a-zA-Z_-])",
+            "captures": {
+                "1": { "name": "keyword.control.hamlpy" }
+            }
         }
         ]
     },
