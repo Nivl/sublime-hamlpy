@@ -67,7 +67,7 @@
     },
     {
         "comment": "%tag#id.class",
-        "begin": "^\\s*(((%)([a-z]+))|((#)([a-zA-Z0-9_-]+))|((\\.)([a-zA-Z0-9_-]+)))",
+        "begin": "^\\s*(((%)([a-z0-9]+))|((#)([a-zA-Z0-9_-]+))|((\\.)([a-zA-Z0-9_-]+)))",
         "beginCaptures": {
             "3": { "name": "keyword.control.hamlpy" },
             "6": { "name": "keyword.control.hamlpy" },
@@ -86,14 +86,14 @@
             "match": "<\\s*$"
         },
         {
-            "match": "(#)([a-zA-Z0-9_]+)",
+            "match": "(#)([a-zA-Z0-9_-]+)",
             "captures": {
                 "1": { "name": "keyword.control.hamlpy" },
                 "2": { "name": "constant.language.hamlpy" }
             }
         },
         {
-            "match": "(\\.)([a-zA-Z0-9_]+)",
+            "match": "(\\.)([a-zA-Z0-9_-]+)",
             "captures": {
                 "1": { "name": "keyword.control.hamlpy" },
                 "2": { "name": "entity.name.function.hamlpy" }
