@@ -21,7 +21,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|get_available_languages|get_current_language|get_current_language_bidi|get_current_timezone|get_static_prefix|get_language_info|get_language_info_list|get_media_prefix|if|in|not|ifchanged|ifequal|ifnotequal|include|load|localize|localtime|now|or|regroup|spaceless|ssi|trans|timezone|url|verbatim|widthradio|with)\s+</string>
+					<string>\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|else|elif|filter|firstof|for|from|empty|get_available_languages|get_current_language|get_current_language_bidi|get_current_timezone|get_static_prefix|get_language_info|get_language_info_list|get_media_prefix|if|in|not|ifchanged|ifequal|ifnotequal|include|load|localize|localtime|now|or|regroup|spaceless|ssi|trans|timezone|url|verbatim|widthradio|with)\s+</string>
 					<key>name</key>
 					<string>variable.parameter</string>
 				</dict>
@@ -281,7 +281,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|filter|firstof|for|from|empty|get_available_languages|get_current_language|get_current_language_bidi|get_current_timezone|get_static_prefix|get_language_info|get_language_info_list|get_media_prefix|if|in|not|ifchanged|ifequal|ifnotequal|include|load|localize|localtime|now|or|regroup|spaceless|ssi|trans|timezone|url|verbatim|widthradio|with)\s+</string>
+					<string>\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|else|elif|filter|firstof|for|from|empty|get_available_languages|get_current_language|get_current_language_bidi|get_current_timezone|get_static_prefix|get_language_info|get_language_info_list|get_media_prefix|if|in|not|ifchanged|ifequal|ifnotequal|include|load|localize|localtime|now|or|regroup|spaceless|ssi|trans|timezone|url|verbatim|widthradio|with)\s+</string>
 					<key>name</key>
 					<string>variable.parameter</string>
 				</dict>
