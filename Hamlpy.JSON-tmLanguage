@@ -108,16 +108,6 @@
         ]
     },
     {
-        "begin": "'",
-        "end": "'",
-        "name": "string.quoted.double.hamlpy"
-    },
-    {
-        "begin": "\"",
-        "end": "\"",
-        "name": "string.quoted.double.hamlpy"
-    },
-    {
         "comment": "{% tags %}",
         "begin": "{%",
         "beginCaptures": {
@@ -158,6 +148,47 @@
         "name": "comment.line.hamlpy",
         "comment": "comments",
         "match": "(-#(.*)$)|^\\s*/(.*)$"
+    },
+    {
+        "comment": "{'key': 'value'}",
+        "begin": "{",
+        "beginCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        },
+        "end": "}",
+        "endCaptures": {
+            "0": { "name": "keyword.control.hamlpy" }
+        },
+        "patterns": [
+        {
+            "include": "$self"
+        },
+        {
+            "match": "\\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|else|elif|filter|firstof|for|from|empty|get_available_languages|get_current_language|get_current_language_bidi|get_current_timezone|get_static_prefix|get_language_info|get_language_info_list|get_media_prefix|if|in|ifchanged|ifequal|ifnotequal|include|load|localize|localtime|now|not|or|regroup|spaceless|ssi|trans|timezone|url|verbatim|widthradio|with)\\s+",
+            "name": "variable.parameter"
+        },
+        {
+            "name": "variable.parameter",
+            "match": "(\\|)(add|addslashs|apnumber|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|intcomma|intword|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|localize|localtime|lorem|lower|make_list|markdown|naturalday|naturaltime|ordinal|phone2numeric|pluralize|pprint|random|removetags|restructuredtext|rjust|safe|safeseq|slice|slugify|static|stringformat|striptags|textile|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|unlocalize|upper|urlencode|urlize|urlizetrunc|utc|wordcount|wordwrap|yesno)(?![a-zA-Z_-])",
+            "captures": {
+                "1": { "name": "keyword.control.hamlpy" }
+            }
+        },
+        {
+            "name": "string.quoted.single",
+            "begin": "(?<!})'(?!{|=)",
+            "end": "(?<!%|}})'"
+        },
+        {
+            "name": "string.quoted.double",
+            "begin": "(?<!})\"(?!{)",
+            "end": "(?<!%|}})\""
+        },
+        {
+            "name": "string.quoted.double",
+            "match": "'|\""
+        }
+        ]
     }
    ],
   "uuid": "963ae34b-a343-4921-81b6-4ad905ad7ae1"
