@@ -12,7 +12,7 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>\s*-</string>
+			<string>\s*-(?!#)</string>
 			<key>comment</key>
 			<string>- tag</string>
 			<key>end</key>

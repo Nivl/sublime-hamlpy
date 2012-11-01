@@ -5,7 +5,7 @@
     "patterns": [
     {
         "comment": "- tag",
-        "begin": "\\s*-",
+        "begin": "\\s*-(?!#)",
         "end": "$",
         "patterns": [
         {
