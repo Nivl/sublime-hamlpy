@@ -96,6 +96,8 @@
 		<dict>
 			<key>begin</key>
 			<string>&lt;[a-zA-Z]+</string>
+			<key>comment</key>
+			<string>&lt;html&gt;</string>
 			<key>end</key>
 			<string>&gt;</string>
 			<key>name</key>
@@ -149,6 +151,34 @@
 					<string>(\|)(add|addslashs|apnumber|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|intcomma|intword|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|localize|localtime|lorem|lower|make_list|markdown|naturalday|naturaltime|ordinal|phone2numeric|pluralize|pprint|random|removetags|restructuredtext|rjust|safe|safeseq|sanitize|slice|slugify|static|stringformat|striptags|textile|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|unlocalize|upper|urlencode|urlize|urlizetrunc|utc|wordcount|wordwrap|yesno)(?![a-zA-Z_-])</string>
 					<key>name</key>
 					<string>variable.parameter</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.hamlpy</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\:)(".+")</string>
+					<key>name</key>
+					<string>string.quoted.double</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.hamlpy</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(\:)(".+")</string>
+					<key>name</key>
+					<string>string.quoted.single</string>
 				</dict>
 			</array>
 		</dict>
@@ -343,26 +373,6 @@
 				<dict>
 					<key>include</key>
 					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>\s+(and|autoescape|as|block|blocktrans|comment|csrf_token|cycle|debug|extends|else|elif|filter|firstof|for|from|empty|get_available_languages|get_current_language|get_current_language_bidi|get_current_timezone|get_static_prefix|get_language_info|get_language_info_list|get_media_prefix|if|in|ifchanged|ifequal|ifnotequal|include|load|localize|localtime|now|not|or|regroup|spaceless|ssi|static|trans|timezone|url|verbatim|widthradio|with)\s+</string>
-					<key>name</key>
-					<string>variable.parameter</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.control.hamlpy</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(\|)(add|addslashs|apnumber|capfirst|center|cut|date|default|default_if_none|dictsort|dictsortreversed|divisibleby|escape|escapejs|first|fix_ampersands|floatformat|force_escape|get_digit|intcomma|intword|iriencode|join|last|length|length_is|linebreaks|linebreaksbr|linenumbers|ljust|localize|localtime|lorem|lower|make_list|markdown|naturalday|naturaltime|ordinal|phone2numeric|pluralize|pprint|random|removetags|restructuredtext|rjust|safe|safeseq|sanitize|slice|slugify|static|stringformat|striptags|textile|time|timesince|timeuntil|title|truncatechars|truncatewords|truncatewords_html|unordered_list|unlocalize|upper|urlencode|urlize|urlizetrunc|utc|wordcount|wordwrap|yesno)(?![a-zA-Z_-])</string>
-					<key>name</key>
-					<string>variable.parameter</string>
 				</dict>
 				<dict>
 					<key>begin</key>
