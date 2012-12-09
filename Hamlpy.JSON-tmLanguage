@@ -53,6 +53,11 @@
         "name": "constant.numeric.hamlpy"
     },
     {
+        "name": "invalid.illegal",
+        "begin": "<[a-zA-Z]+",
+        "end": ">"
+    },
+    {
         "comment": "{{ var|filter:'value' }}",
         "begin": "(?<!\\\\)(=|#|{){",
         "beginCaptures": {
