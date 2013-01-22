@@ -53,9 +53,9 @@
         "name": "constant.numeric.hamlpy"
     },
     {
-        "comment": "<html>",
+        "comment": "<tag></tag>",
         "name": "invalid.illegal",
-        "begin": "<[a-zA-Z]+",
+        "begin": "</?[a-zA-Z]+",
         "end": ">"
     },
     {
@@ -189,21 +189,33 @@
         },
         "patterns": [
         {
-            "include": "$self"
-        },
-        {
             "name": "string.quoted.single",
-            "begin": "(?<!})'(?!{|=)",
-            "end": "(?<!%|}})'"
+            "begin": "(?<!})'",
+            "end": "'",
+
+            "patterns": [
+            {
+                "include": "$self"
+            }
+            ]
         },
         {
             "name": "string.quoted.double",
-            "begin": "(?<!})\"(?!{)",
-            "end": "(?<!%|}})\""
+            "begin": "(?<!})\"",
+            "end": "\"",
+
+            "patterns": [
+            {
+                "include": "$self"
+            }
+            ]
         },
         {
             "name": "string.quoted.double",
             "match": "'|\""
+        },
+        {
+            "include": "$self"
         }
         ]
     }

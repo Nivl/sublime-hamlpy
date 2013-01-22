@@ -95,9 +95,9 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>&lt;[a-zA-Z]+</string>
+			<string>&lt;/?[a-zA-Z]+</string>
 			<key>comment</key>
-			<string>&lt;html&gt;</string>
+			<string>&lt;tag&gt;&lt;/tag&gt;</string>
 			<key>end</key>
 			<string>&gt;</string>
 			<key>name</key>
@@ -371,30 +371,44 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
 					<key>begin</key>
-					<string>(?&lt;!})'(?!{|=)</string>
+					<string>(?&lt;!})'</string>
 					<key>end</key>
-					<string>(?&lt;!%|}})'</string>
+					<string>'</string>
 					<key>name</key>
 					<string>string.quoted.single</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(?&lt;!})"(?!{)</string>
+					<string>(?&lt;!})"</string>
 					<key>end</key>
-					<string>(?&lt;!%|}})"</string>
+					<string>"</string>
 					<key>name</key>
 					<string>string.quoted.double</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>$self</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>'|"</string>
 					<key>name</key>
 					<string>string.quoted.double</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
 				</dict>
 			</array>
 		</dict>
