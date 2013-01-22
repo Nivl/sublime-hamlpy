@@ -44,7 +44,7 @@
     },
     {
         "comment": "hamlpy filter",
-        "match": "^\\s*:(plain|javascript|cdata|css|markdown|highlight|python)?$",
+        "match": "^\\s*:(plain|javascript|cdata|css|markdown|highlight|python|coffeescript)?$",
         "name": "entity.name.function.hamlpy"
     },
     {
@@ -190,7 +190,7 @@
         "patterns": [
         {
             "name": "string.quoted.single",
-            "begin": "(?<!})'",
+            "begin": "'",
             "end": "'",
 
             "patterns": [

@@ -81,7 +81,7 @@
 			<key>comment</key>
 			<string>hamlpy filter</string>
 			<key>match</key>
-			<string>^\s*:(plain|javascript|cdata|css|markdown|highlight|python)?$</string>
+			<string>^\s*:(plain|javascript|cdata|css|markdown|highlight|python|coffeescript)?$</string>
 			<key>name</key>
 			<string>entity.name.function.hamlpy</string>
 		</dict>
@@ -372,7 +372,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>(?&lt;!})'</string>
+					<string>'</string>
 					<key>end</key>
 					<string>'</string>
 					<key>name</key>
